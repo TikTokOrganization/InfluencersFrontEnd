@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "react": "^18.2.0"
+  },
+  "name": "influencers-frontend",
+  "description": "React-based front end for influencers",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TikTokOrganization/InfluencersFrontEnd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TikTokOrganization/InfluencersFrontEnd/issues"
+  },
+  "homepage": "https://github.com/TikTokOrganization/InfluencersFrontEnd#readme"
+}
