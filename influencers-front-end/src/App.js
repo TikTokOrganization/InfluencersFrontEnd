@@ -1,9 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
+import CategoryList from './Components/CategoryList/CategoryList.js'
 
-function App() {
-
-    
+function App() {    
   return (
     <div className="App">
       <div className="App-header">
@@ -14,6 +12,8 @@ function App() {
 
       <div className="App-container">
         <div className="App-left">
+            <CategoryList>
+            </CategoryList>
         </div>
         <div className="App-right">
         </div>
