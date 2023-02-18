@@ -32,4 +32,57 @@
     width: 65%;
     left: 35%;
     height: 100%;
+    /*display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;*/
+}
+
+.Video-row {
+    display: flex;
+    flex-direction: row;
+    /*flex-wrap: wrap;*/
+    height: 300px;
+}
+
+.Video {
+    /*width: 36%;
+    height: 54%;*/
+    width: 10px;
+    height: 20px;
+}
+
+.Video-one {
+    flex-basis: 0;
+    flex-grow: 1;
+    /*width: 36%;
+    height: 54%;*/
+}
+
+
+.Video-two {
+    flex-basis: 0;
+    flex-grow: 1;
+    /*width: 36%;
+    height: 54%;*/
+}
+
+.Video-three {
+    flex-basis: 0;
+    flex-grow: 4;
+    /*width: 36%;
+    height: 54%;*/
+}
+
+.Video-four {
+    flex-basis: 0;
+    flex-grow: 1;
+    /*width: 36%;
+    height: 54%;*/
+}
+
+.Video-five {
+    flex-basis: 0;
+    flex-grow: 1;
+    /*width: 36%;
+    height: 54%;*/
 }
