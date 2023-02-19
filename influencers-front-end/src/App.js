@@ -18,6 +18,13 @@ function App() {
         </div>
         <div className="App-right">
           <div className="Video-row">
+            <iframe className="Video-one"
+              src="https://www.youtube.com/embed/EhKetUBuyxc"
+              title="that girl era / Monday dinner #healrhylifestyle #foodie #shorts"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
             <img className="Video-one"
               src={ShortExample}
               alt={"ShortExample"}
