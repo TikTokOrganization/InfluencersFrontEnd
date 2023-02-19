@@ -17,38 +17,44 @@ function App() {
             </CategoryList>
         </div>
         <div className="App-right">
-          <ul>
-            <li>
+          <div className="Video-row">
+            <div className="Video-one">
             <img className="Video"
               src={ShortExample}
               alt={"ShortExample"}
             />
-            </li>
-            <li>
+            </div>
+            <div className="Video-two">
             <img className="Video"
               src={ShortExample}
               alt={"ShortExample"}
             />
-            </li>
-            <li>
+            </div>
+            <div className="Video-three">
             <img className="Video"
               src={ShortExample}
               alt={"ShortExample"}
             />
-            </li>
-            <li>
+            </div>
+            <div className="Video-four">
             <img className="Video"
               src={ShortExample}
               alt={"ShortExample"}
             />
-            </li>
-            <li>
+            </div>
+            <div className="Video-five">
             <img className="Video"
               src={ShortExample}
               alt={"ShortExample"}
             />
-            </li>
-          </ul>
+            </div>
+          </div>
+          <div className="Video-row">
+            <img className="Video"
+              src={ShortExample}
+              alt={"ShortExample"}
+            />
+          </div>
         </div>
       </div>
     </div>
