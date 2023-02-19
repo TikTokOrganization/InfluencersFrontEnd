@@ -18,47 +18,109 @@ function App() {
         </div>
         <div className="App-right">
           <div className="Video-row">
-            <div className="Video-one">
-            <img className="Video"
+            <img className="Video-one"
               src={ShortExample}
               alt={"ShortExample"}
             />
-            </div>
-            <div className="Video-two">
-            <img className="Video"
+            <img className="Video-two"
               src={ShortExample}
               alt={"ShortExample"}
             />
-            </div>
-            <div className="Video-three">
-            <img className="Video"
+            <img className="Video-three"
               src={ShortExample}
               alt={"ShortExample"}
             />
-            </div>
+            <img className="Video-four"
+              src={ShortExample}
+              alt={"ShortExample"}
+            />
+            <img className="Video-five"
+              src={ShortExample}
+              alt={"ShortExample"}
+            />
+            <img className="Video-five"
+              src={ShortExample}
+              alt={"ShortExample"}
+            />
+            <img className="Video-five"
+              src={ShortExample}
+              alt={"ShortExample"}
+            />
+            <img className="Video-five"
+              src={ShortExample}
+              alt={"ShortExample"}
+            />
+            <img className="Video-five"
+              src={ShortExample}
+              alt={"ShortExample"}
+            />
+            <img className="Video-five"
+              src={ShortExample}
+              alt={"ShortExample"}
+            />
+            <img className="Video-five"
+              src={ShortExample}
+              alt={"ShortExample"}
+            />
+            <img className="Video-five"
+              src={ShortExample}
+              alt={"ShortExample"}
+            />
+            <img className="Video-five"
+              src={ShortExample}
+              alt={"ShortExample"}
+            />
+            <img className="Video-five"
+              src={ShortExample}
+              alt={"ShortExample"}
+            />
+            <img className="Video-five"
+              src={ShortExample}
+              alt={"ShortExample"}
+            />
+            <img className="Video-five"
+              src={ShortExample}
+              alt={"ShortExample"}
+            />
+            <img className="Video-five"
+              src={ShortExample}
+              alt={"ShortExample"}
+            />
+            <div className="Video-five"></div>
+            <div className="Video-five"></div>
+            <div className="Video-five"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+
+/*
+
             <div className="Video-four">
-            <img className="Video"
+            <img className="Video-four"
               src={ShortExample}
               alt={"ShortExample"}
             />
             </div>
             <div className="Video-five">
-            <img className="Video"
+            <img className="Video-five"
               src={ShortExample}
               alt={"ShortExample"}
             />
             </div>
-          </div>
+
+
           <div className="Video-row">
             <img className="Video"
               src={ShortExample}
               alt={"ShortExample"}
             />
           </div>
-        </div>
-      </div>
-    </div>
-  );
+
+*/
+
 
 /*
 
