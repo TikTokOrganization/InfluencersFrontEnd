@@ -9,7 +9,7 @@ function Paragraph() {
     )
 }
 
-function VideoPane() {
+function VideoPane(props) {
     const urls = [
         "https://www.youtube.com/embed/EhKetUBuyxc",
         "https://www.youtube.com/embed/EhKetUBuyxc",
@@ -41,6 +41,30 @@ function VideoPane() {
               allowfullscreen>
             </iframe>
     )
+
+    const videoObjects = props.data.items
+
+    const test = videoObjects.filter((video) => {
+        
+        if(props.selectedCategory == 0) {
+            if(video.snippet.categoryId == 17) {
+                return true;
+            } else {
+                return false;
+            }
+        } else if(props.selectedCategory == 1) {
+            if(video.snippet.categoryId == 23) {
+                return true;
+                //24
+            } else {
+                return false;
+            }
+        }
+
+        return true;
+    })
+    
+    console.log(test[0].id);
 
     return(
 

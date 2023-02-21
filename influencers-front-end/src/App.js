@@ -13,6 +13,7 @@ function App() {
     let data = [finalOutput["items"][0], finalOutput["items"][0]];
 
     console.log(data);
+    console.log(selectedCategory)
 
     function getCategories() {
         // TODO: this function gets categories based on the tags of the videos
@@ -33,7 +34,10 @@ function App() {
                 <CategoryList selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}></CategoryList>
             </div>
             <div className="App-right">
-              <VideoPane>
+              <VideoPane
+                selectedCategory={selectedCategory}
+                data={finalOutput}
+              >
               </VideoPane>
             </div>
         </div>
