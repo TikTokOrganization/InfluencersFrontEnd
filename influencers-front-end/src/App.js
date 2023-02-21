@@ -2,6 +2,8 @@ import './App.css';
 import CategoryList from './Components/CategoryList/CategoryList.js'
 import React, { useEffect, useState } from "react";
 import finalOutput from './finalOutput.json';
+import VideoPane from './Components/VideoPane/VideoPane.js'
+import ShortExample from './Images/ShortExample.png';
 
 function App() {
     const [selectedCategory, setSelectedCategory] = useState(-1);
@@ -31,6 +33,8 @@ function App() {
                 <CategoryList selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}></CategoryList>
             </div>
             <div className="App-right">
+              <VideoPane>
+              </VideoPane>
             </div>
         </div>
         </div>

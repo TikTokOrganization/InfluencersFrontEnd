@@ -1,0 +1,23 @@
+.Video-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 100px;
+    height: 100%;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: flex-start;
+    row-gap: 0px;
+}
+
+.Video {
+    flex-basis: auto;
+    flex-grow: 1;
+    width: 130px;
+    height: 200px;
+    /*
+    108px
+    162px
+    /*width: 36%;
+    height: 54%;*/
+}
