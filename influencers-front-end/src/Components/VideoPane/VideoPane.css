@@ -11,13 +11,6 @@
 }
 
 .Video {
-    /*width: 36%;
-    height: 54%;*/
-    width: 10px;
-    height: 20px;
-}
-
-.Video-one {
     flex-basis: auto;
     flex-grow: 1;
     width: 130px;
@@ -25,43 +18,6 @@
     /*
     108px
     162px
-    /*width: 36%;
-    height: 54%;*/
-}
-
-
-.Video-two {
-    flex-basis: auto;
-    flex-grow: 1;
-    width: 108px;
-    height: 162px;
-    /*width: 36%;
-    height: 54%;*/
-}
-
-.Video-three {
-    flex-basis: auto;
-    flex-grow: 1;
-    width: 108px;
-    height: 162px;
-    /*width: 36%;
-    height: 54%;*/
-}
-
-.Video-four {
-    flex-basis: auto;
-    flex-grow: 1;
-    width: 108px;
-    height: 162px;
-    /*width: 36%;
-    height: 54%;*/
-}
-
-.Video-five {
-    flex-basis: auto;
-    flex-grow: 1;
-    width: 108px;
-    height: 162px;
     /*width: 36%;
     height: 54%;*/
 }
