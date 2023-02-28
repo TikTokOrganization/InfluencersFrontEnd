@@ -2,21 +2,19 @@ import './CategoryList.css';
 import React, { useEffect, useState } from "react";
 
 function CategoryList(props) {
-    const categories = ["Dog", "Cat"];
+    let [categories, setCategories] = useState(props.categories);
     let category = [categories.length];
     let [selectedCategory, setSelectedCategory] = useState(props.selectedCategory);
 
-    // function handleCategoryChange(event) {
-    //     props.onChange(event.target.value);
-    // }
 
     function addCategories() {
         var toAdd = document.createDocumentFragment();
-        for(var i = 0; i < categories.length; i++) {
+        let i = 0;
+        for (const [key, value] of Object.entries(categories)) {
             category[i] = document.createElement("div");
             category[i].id = i;
             category[i].className = "category";
-            category[i].textContent = categories[i];
+            category[i].textContent = value;
             category[i].onclick = (function(i) {
                 return function() {
                     if (selectedCategory == i) {
@@ -35,6 +33,7 @@ function CategoryList(props) {
                 };
             })(i);
             toAdd.appendChild(category[i]);
+            i += 1;
         }
         document.getElementById("categoryList").appendChild(toAdd);
     }
@@ -44,7 +43,7 @@ function CategoryList(props) {
     };
 
     return(
-        <div id="categoryList">
+        <div className="categoryList" id="categoryList">
         </div>
     );
 }
