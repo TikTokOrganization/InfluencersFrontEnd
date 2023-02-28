@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 
 function CategoryList(props) {
     let [categories, setCategories] = useState(props.categories);
-    let category = [categories.length];
+    let category = [categories.length]; // list of divs
     let [selectedCategory, setSelectedCategory] = useState(props.selectedCategory);
 
 

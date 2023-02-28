@@ -55,6 +55,9 @@ function App() {
             </div>
             <div className="App-right">
             </div>
+            <button className="AddButton">Add</button>
+            <button className="SaveButton">Save</button>
+            <button className="DeleteButton">Delete</button>
         </div>
         </div>
     );
