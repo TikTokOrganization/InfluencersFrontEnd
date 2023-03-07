@@ -6,7 +6,6 @@ import DeleteButton from  './Components/DeleteButton/DeleteButton.js'
 import React, { useEffect, useState } from "react";
 import finalOutput from './finalOutput.json';
 import VideoPane from './Components/VideoPane/VideoPane.js'
-import ShortExample from './Images/ShortExample.png';
 
 function App() {
     const [selectedCategory, setSelectedCategory] = useState(-1);

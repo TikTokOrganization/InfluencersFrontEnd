@@ -1,36 +1,6 @@
 import './VideoPane.css';
-import ShortExample from '../../Images/ShortExample.png';
-
-function Paragraph() {
-    return(
-        <p>
-            This is a paragraph.
-        </p>
-    )
-}
 
 function VideoPane(props) {
-    const urls = [
-        "https://www.youtube.com/embed/EhKetUBuyxc",
-        "https://www.youtube.com/embed/EhKetUBuyxc",
-        "https://www.youtube.com/embed/EhKetUBuyxc",
-        "https://www.youtube.com/embed/EhKetUBuyxc",
-        "https://www.youtube.com/embed/EhKetUBuyxc",
-        "https://www.youtube.com/embed/EhKetUBuyxc",
-        "https://www.youtube.com/embed/EhKetUBuyxc",
-        "https://www.youtube.com/embed/EhKetUBuyxc",
-        "https://www.youtube.com/embed/EhKetUBuyxc",
-        "https://www.youtube.com/embed/EhKetUBuyxc",
-        "https://www.youtube.com/embed/EhKetUBuyxc",
-        "https://www.youtube.com/embed/EhKetUBuyxc",
-        "https://www.youtube.com/embed/EhKetUBuyxc",
-        "https://www.youtube.com/embed/EhKetUBuyxc",
-        "https://www.youtube.com/embed/EhKetUBuyxc",
-        "https://www.youtube.com/embed/EhKetUBuyxc",
-        "https://www.youtube.com/embed/EhKetUBuyxc",
-        "https://www.youtube.com/embed/EhKetUBuyxc",
-        "https://www.youtube.com/embed/EhKetUBuyxc",
-    ]
 
     const videoObjects = props.data.items
 
@@ -53,8 +23,6 @@ function VideoPane(props) {
 
         return true;
     })
-    
-    console.log(test[0].id);
 
     const iFrames = test.map((video) => { 
 
