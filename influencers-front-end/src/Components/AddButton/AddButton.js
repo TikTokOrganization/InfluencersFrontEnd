@@ -7,7 +7,6 @@ function AddButton(props) {
 
     function addCategory() {
         props.setCategories(categories.push("Test"));
-        props.setCategoryKey(props.categoryKey + 1);
     }
 
     return(

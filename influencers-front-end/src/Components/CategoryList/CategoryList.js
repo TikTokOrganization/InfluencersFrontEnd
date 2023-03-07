@@ -10,11 +10,11 @@ function CategoryList(props) {
     function addCategories() {
         var toAdd = document.createDocumentFragment();
         let i = 0;
-        for (i = 0; i < categories.length; i++) {
+        for (const [key, value] of Object.entries(categories)) {
             category[i] = document.createElement("div");
             category[i].id = i;
             category[i].className = "category";
-            category[i].textContent = categories[i];
+            category[i].textContent = value;
             category[i].onclick = (function(i) {
                 return function() {
                     if (selectedCategory == i) {
@@ -33,6 +33,7 @@ function CategoryList(props) {
                 };
             })(i);
             toAdd.appendChild(category[i]);
+            i += 1;
         }
         document.getElementById("categoryList").appendChild(toAdd);
     }
