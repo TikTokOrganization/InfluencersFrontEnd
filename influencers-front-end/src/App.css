@@ -12,25 +12,23 @@
 }
 
 .App-container {
-    height: 550px;
-    width: 60%;
+    height: 575px;
+    width: 750px;
     position: absolute;
-    left: 20%;
-    right: 20%;
+    left: 25%;
 }
 
 .App-left {
-    border: 2px solid black;
     position: absolute;
-    width: 25%;
-    height: 500px;
+    width: 200px;
+    height: 575px;
 }
 
 .App-right {
     border: 1px solid black;
     position: absolute;
-    width: 65%;
-    left: 35%;
+    width: 500px;
+    left: 250px;
     height: 500px;
 }
 
@@ -39,26 +37,19 @@
     border-bottom: 1px solid black;
 }
 
-.AddButton {
+.AddButtonContainer {
     position: absolute;
-    height: 50px;
-    width: 50px;
-    top: 510px;
+    top: 515px;
 }
-.SaveButton {
-    position: absolute;
-    height: 50px;
-    width: 50px;
-    top: 510px;
-    left: 65px;
-}
-.button{
 
-}
-.DeleteButton {
+.DeleteButtonContainer {
     position: absolute;
-    height: 50px;
-    width: 50px;
-    top: 510px;
-    left: 130px;
+    top: 515px;
+    right: 0px;
+}
+
+.SaveButtonContainer {
+    position: absolute;
+    top: 515px;
+    left: 75px;
 }

@@ -6,15 +6,15 @@ function CategoryList(props) {
     let category = [categories.length]; // list of divs
     let [selectedCategory, setSelectedCategory] = useState(props.selectedCategory);
 
-
+    //useEffect(() => {
     function addCategories() {
         var toAdd = document.createDocumentFragment();
         let i = 0;
-        for (const [key, value] of Object.entries(categories)) {
+        for (i = 0; i < categories.length; i++) {
             category[i] = document.createElement("div");
             category[i].id = i;
             category[i].className = "category";
-            category[i].textContent = value;
+            category[i].textContent = categories[i];
             category[i].onclick = (function(i) {
                 return function() {
                     if (selectedCategory == i) {
@@ -33,17 +33,18 @@ function CategoryList(props) {
                 };
             })(i);
             toAdd.appendChild(category[i]);
-            i += 1;
         }
         document.getElementById("categoryList").appendChild(toAdd);
     }
+    //});
 
+    
     window.onload = function() {
         addCategories();
     };
 
     return(
-        <div className="categoryList" id="categoryList">
+        <div onLoad={addCategories} className="categoryList" id="categoryList">
         </div>
     );
 }
