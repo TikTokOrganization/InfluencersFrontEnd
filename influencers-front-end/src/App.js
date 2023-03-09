@@ -7,6 +7,69 @@ import React, { useEffect, useState } from "react";
 import finalOutput from './finalOutput.json';
 import VideoPane from './Components/VideoPane/VideoPane.js'
 
+
+function requestOAuth2Token() {
+    const CLIENT_ID = '620677125812-g4634rpb7kam1r5hm8kq2mdccdhg3i5l.apps.googleusercontent.com';
+    const REDIRECT_URI = 'http://localhost:3000/';
+    const OAUTH2ENDPOINT = 'https://accounts.google.com/o/oauth2/v2/auth';
+
+    // Create element to open OAuth 2.0 endpoint in new window.
+    var form = document.createElement('form');
+    form.setAttribute('method', 'GET'); // Send as a GET request.
+    form.setAttribute('action', OAUTH2ENDPOINT);
+
+    // Parameters to pass to OAuth 2.0 endpoint.
+    var params = {'client_id': CLIENT_ID,
+                'redirect_uri': REDIRECT_URI,
+                'scope': 'https://www.googleapis.com/auth/youtube.readonly',
+                'state': 'try_sample_request',
+                'include_granted_scopes': 'true',
+                'response_type': 'token'};
+
+    // Add form parameters as hidden input values.
+    for (var p in params) {
+        var input = document.createElement('input');
+        input.setAttribute('type', 'hidden');
+        input.setAttribute('name', p);
+        input.setAttribute('value', params[p]);
+        form.appendChild(input);
+    }
+
+    // Add form to page and submit it to open the OAuth 2.0 endpoint.
+    document.body.appendChild(form);
+    form.submit();
+}
+
+function initiateBackendConnection() {
+    localStorage.removeItem("oauth2-params");
+    var fragmentString = window.location.hash.substring(1);
+    var params = {};
+    var regex = /([^&=]+)=([^&]*)/g, m;
+    while (m = regex.exec(fragmentString)) {
+        params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+    }
+    if(Object.keys(params).length > 0) {
+        localStorage.setItem('oauth2-params', JSON.stringify(params));
+    }
+
+    var params = JSON.parse(localStorage.getItem('oauth2-params'));
+    if (params && params['access_token']) {
+        console.log(params["access_token"]);
+        fetch("http://localhost:8080?" + new URLSearchParams({
+            "token": params["access_token"]
+        }))
+        .then(res => console.log(res))
+        .then(data => console.log(data))
+    } else {
+        requestOAuth2Token()
+        .then(fetch("http://localhost:8080?" + new URLSearchParams({
+            "token": params["access_token"]
+        }))
+        .then(res => console.log(res))
+        .then(data => console.log(data)));
+    }
+}
+
 function App() {
     const [selectedCategory, setSelectedCategory] = useState(-1);
     let [categories, setCategories] = useState({
@@ -43,7 +106,7 @@ function App() {
         "44": "Trailers"
     })
     // 2 shorts to fill "data". data[0] is a dog short, data[1] is a cat short
-    let data = [finalOutput["items"][0], finalOutput["items"][0]];
+    let data = [finalOutput["items"][0], finalOutput["items"][0], finalOutput["items"][0]];
 
     
     useEffect(() => {
@@ -59,6 +122,7 @@ function App() {
             <p>
             Youtube Shorts Sorter
             </p>
+            <button onClick={initiateBackendConnection}>Login</button>
         </div>
 
         <div className="App-container">

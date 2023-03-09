@@ -19,6 +19,12 @@ function VideoPane(props) {
             } else {
                 return false;
             }
+        } else if(props.selectedCategory == 2) {
+            if(video.snippet.categoryId == 22) {
+                return true;
+            } else {
+                return false;
+            }
         }
 
         return true;
