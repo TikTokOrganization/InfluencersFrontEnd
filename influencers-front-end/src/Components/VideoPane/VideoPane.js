@@ -6,7 +6,7 @@ function VideoPane(props) {
 
     const test = videoObjects.filter((video) => {
         
-        if(props.selectedCategory == 0) {
+        /*if(props.selectedCategory == 0) {
             if(video.snippet.categoryId == 17) {
                 return true;
             } else {
@@ -21,7 +21,13 @@ function VideoPane(props) {
             }
         }
 
-        return true;
+        return true;*/
+        
+        if(video.snippet.categoryId == props.selectedCategory || props.selectedCategory == -1) {
+            return true;
+        }
+
+        return false;
     })
 
     const iFrames = test.map((video) => { 
