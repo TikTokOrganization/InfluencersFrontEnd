@@ -47,7 +47,7 @@ function App() {
 
     
     useEffect(() => {
-        fetch("https://localhost:8080/getCategories")
+        fetch("http://localhost:8080/getCategories")
             .then(res => res.json())
             .then(data => console.log(data));
     }, [])
