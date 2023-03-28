@@ -41,11 +41,11 @@ function App() {
                 </div>
             </div>
             <div className="App-right">
-              {/* <VideoPane
+              { <VideoPane
                 selectedCategory={selectedCategory}
                 data={finalOutput}
               >
-              </VideoPane> */}
+              </VideoPane> }
             </div>
         </div>
         </div>
