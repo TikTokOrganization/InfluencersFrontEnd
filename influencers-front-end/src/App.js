@@ -9,49 +9,15 @@ import VideoPane from './Components/VideoPane/VideoPane.js'
 
 function App() {
     const [selectedCategory, setSelectedCategory] = useState(-1);
-    let [categories, setCategories] = useState({
-        "1": "Film & Animation",
-        "2": "Autos & Vehicles",
-        "10": "Music",
-        "15": "Pets & Animals",
-        "17": "Sports",
-        "18": "Short Movies",
-        "19": "Travel & Events",
-        "20": "Gaming",
-        "21": "Videoblogging",
-        "23": "Comedy",
-        "24": "Entertainment",
-        "25": "News & Politics",
-        "26": "Howto & Style",
-        "27": "Education",
-        "28": "Science & Technology",
-        "29": "Nonprofits & Activism",
-        "30": "Movies",
-        "31": "Anime/Animation",
-        "32": "Action/Adventure",
-        "33": "Classics",
-        "34": "Comedy",
-        "35": "Documentary",
-        "36": "Drama",
-        "37": "Family",
-        "38": "Foreign",
-        "39": "Horror",
-        "40": "Sci-Fi/Fantasy",
-        "41": "Thriller",
-        "42": "Shorts",
-        "43": "Shows",
-        "44": "Trailers"
-    })
-    // 2 shorts to fill "data". data[0] is a dog short, data[1] is a cat short
-    let data = [finalOutput["items"][0], finalOutput["items"][0]];
-
+    let [categories, setCategories] = useState({});
     
     useEffect(() => {
         fetch("http://localhost:8080/getCategories")
             .then(res => res.json())
-            .then(data => console.log(data));
+            .then((response) => {
+                setCategories(response);
+            })
     }, [])
-
 
     return (
         <div className="App">
@@ -75,11 +41,11 @@ function App() {
                 </div>
             </div>
             <div className="App-right">
-              <VideoPane
+              {/* <VideoPane
                 selectedCategory={selectedCategory}
                 data={finalOutput}
               >
-              </VideoPane>
+              </VideoPane> */}
             </div>
         </div>
         </div>
