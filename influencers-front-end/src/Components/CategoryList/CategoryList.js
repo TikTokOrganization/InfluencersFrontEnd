@@ -16,11 +16,13 @@ function CategoryList(props) {
         temp[selectedCategory] = 1;
     });
 
+    console.log(props.categories);
+
     useEffect(() => {
         if (Object.keys(props.categories).length == categoryList.length) {
             return;
         }
-        Object.values(props.categories).forEach((category, i) => {
+        Object.keys(props.categories).forEach((category, i) => {
             categoryList.push(<div
                         className="category"
                         id={i}

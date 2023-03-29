@@ -12,12 +12,14 @@ function App() {
     let [categories, setCategories] = useState({});
     
     useEffect(() => {
-        fetch("http://localhost:8080/getCategories")
+        fetch("http://localhost:8080/getShortsOfCategory")
             .then(res => res.json())
             .then((response) => {
+                console.log(response);
                 setCategories(response);
             })
     }, [])
+
 
     return (
         <div className="App">
@@ -41,11 +43,10 @@ function App() {
                 </div>
             </div>
             <div className="App-right">
-              { <VideoPane
+              {<VideoPane
                 selectedCategory={selectedCategory}
-                data={finalOutput}
-              >
-              </VideoPane> }
+                data={finalOutput}>
+                </VideoPane>}
             </div>
         </div>
         </div>
