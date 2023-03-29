@@ -22,7 +22,7 @@ function VideoPane(props) {
         }
 
         return true;*/
-        
+
         if(video.snippet.categoryId == props.selectedCategory || props.selectedCategory == -1) {
             return true;
         }
@@ -32,18 +32,26 @@ function VideoPane(props) {
 
     const iFrames = test.map((video) => { 
 
-        let url = 'https://www.youtube.com/embed/' + video.id
+        let url_2 = 'https://www.youtube.com/embed/' + video.url
+        let url = video.snippet.thumbnails.default.url
 
         return (
             /*<p>{url}</p>*/
             <iframe className="Video"
-              src={url}
+              src={url_2}
               title="that girl era / Monday dinner #healrhylifestyle #foodie #shorts"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen>
             </iframe>
         )
+
+        /*
+        <img className='Video'
+              src={url}
+            >
+        </img>
+        */
     })
 
     return(
