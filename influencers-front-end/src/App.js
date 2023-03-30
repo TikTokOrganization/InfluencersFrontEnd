@@ -13,13 +13,14 @@ function App() {
     const [categories, setCategories] = useState({});
     
     useEffect(() => {
-        fetch("http://localhost:8080/getShortsOfCategory") // should be getCategories I believe
+        fetch("http://localhost:8080/getShortsOfCategory")
             .then(res => res.json())
             .then((response) => {
                 console.log(JSON.stringify(response));
                 setCategories(response);
             })
     }, [])
+
 
     return (
         <div className="App">
@@ -32,7 +33,6 @@ function App() {
         <div className="App-container">
             <div className="App-left">
                 <CategoryList categories={categories} setCategories={setCategories} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}></CategoryList>
-                {/*
                 <div className="AddButtonContainer">
                     <AddButton categories={categories} setCategories={setCategories}></AddButton >
                 </div>
@@ -42,7 +42,6 @@ function App() {
                 <div className="DeleteButtonContainer">
                     <DeleteButton></DeleteButton>
                 </div>
-                */}
             </div>
             <div className="App-right">
               {<VideoPane
