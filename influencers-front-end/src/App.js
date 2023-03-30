@@ -7,6 +7,8 @@ import React, { useEffect, useState } from "react";
 import finalOutput from './finalOutput.json';
 import backendOutput from './backendOutput.json';
 import VideoPane from './Components/VideoPane/VideoPane.js'
+import {useGoogleLogin } from '@react-oauth/google';
+import { string } from 'prop-types';
 
 function App() {
     const [selectedCategory, setSelectedCategory] = useState(-1);
@@ -20,6 +22,17 @@ function App() {
                 setCategories(response);
             })
     }, [])
+    
+    const login = useGoogleLogin({
+        onSuccess: tokenResponse => {
+        var token = {
+            method: 'POST',
+            body: tokenResponse['access_token']
+        }
+        fetch("http://localhost:8080/recvToken", token)
+            .then(res => console.log(res))
+        }
+    });
 
     return (
         <div className="App">
@@ -27,6 +40,7 @@ function App() {
             <p>
             Youtube Shorts Sorter
             </p>
+            <button onClick={() => login()}>Login</button>
         </div>
 
         <div className="App-container">
