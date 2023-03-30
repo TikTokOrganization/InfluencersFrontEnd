@@ -13,7 +13,7 @@ function App() {
     const [categories, setCategories] = useState({});
     
     useEffect(() => {
-        fetch("http://localhost:8080/getShortsOfCategory") // should be getCategories I believe
+        fetch("http://localhost:8080/getShortsOfCategory")
             .then(res => res.json())
             .then((response) => {
                 console.log(JSON.stringify(response));
