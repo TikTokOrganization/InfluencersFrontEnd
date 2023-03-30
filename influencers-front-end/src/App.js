@@ -5,14 +5,15 @@ import SaveButton from  './Components/SaveButton/SaveButton.js'
 import DeleteButton from  './Components/DeleteButton/DeleteButton.js'
 import React, { useEffect, useState } from "react";
 import finalOutput from './finalOutput.json';
+import backendOutput from './backendOutput.json';
 import VideoPane from './Components/VideoPane/VideoPane.js'
 
 function App() {
     const [selectedCategory, setSelectedCategory] = useState(-1);
-    let [categories, setCategories] = useState({});
+    const [categories, setCategories] = useState({});
     
     useEffect(() => {
-        fetch("http://localhost:8080/getShortsOfCategory")
+        fetch("http://localhost:8080/getShortsOfCategory") // should be getCategories I believe
             .then(res => res.json())
             .then((response) => {
                 console.log(JSON.stringify(response));
@@ -45,8 +46,9 @@ function App() {
             </div>
             <div className="App-right">
               {<VideoPane
+                categories={categories}
                 selectedCategory={selectedCategory}
-                data={finalOutput}>
+                data={backendOutput}>
             </VideoPane>}
             </div>
         </div>
