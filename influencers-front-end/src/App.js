@@ -48,7 +48,7 @@ function App() {
               {<VideoPane
                 categories={categories}
                 selectedCategory={selectedCategory}
-                data={backendOutput}>
+                data={categories}>
             </VideoPane>}
             </div>
         </div>
