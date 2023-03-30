@@ -6,15 +6,12 @@ import DeleteButton from  './Components/DeleteButton/DeleteButton.js'
 import React, { useEffect, useState } from "react";
 import finalOutput from './finalOutput.json';
 import VideoPane from './Components/VideoPane/VideoPane.js'
-import load from 'little-loader'
 import {useGoogleLogin } from '@react-oauth/google';
+import { string } from 'prop-types';
 
 function App() {
     const [selectedCategory, setSelectedCategory] = useState(-1);
     let [categories, setCategories] = useState({});
-    load('https://accounts.google.com/gsi/client', (err) => {
-
-    })
     
     useEffect(() => {
         fetch("http://localhost:8080/getShortsOfCategory")
@@ -26,7 +23,14 @@ function App() {
     }, [])
 
     const login = useGoogleLogin({
-        onSuccess: tokenResponse => console.log(tokenResponse),
+        onSuccess: tokenResponse => {
+        var token = {
+            method: 'POST',
+            body: tokenResponse['access_token']
+        }
+        fetch("http://localhost:8080/recvToken", token)
+            .then(res => console.log(res))
+        }
     });
 
     return (
